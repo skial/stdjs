@@ -545,46 +545,51 @@ extern class HTMLSourceElement extends HTMLElement {
 
 
 extern class HTMLMediaElement extends HTMLElement {
+	
 	// error state
-	public var error (default,never) : MediaError;
+		public var error (default,never) : MediaError;
+	
 	// network state
-	public var src : DOMString;
-	public var currentSrc (default,never) : DOMString;
-	public static var NETWORK_EMPTY : UnsignedShort = 0;
-	public static var NETWORK_IDLE : UnsignedShort = 1;
-	public static var NETWORK_LOADING : UnsignedShort = 2;
-	public static var NETWORK_NO_SOURCE : UnsignedShort = 3;
-	public var networkState (default,never) : UnsignedShort;
-	public var preload : DOMString;
-	public var buffered (default,never) : TimeRanges;
-	public function load() : Void;
-	public function canPlayType(type:DOMString) : DOMString;
+		public var src : DOMString;
+		public var currentSrc (default,never) : DOMString;
+		public static var NETWORK_EMPTY : UnsignedShort = 0;
+		public static var NETWORK_IDLE : UnsignedShort = 1;
+		public static var NETWORK_LOADING : UnsignedShort = 2;
+		public static var NETWORK_NO_SOURCE : UnsignedShort = 3;
+		public var networkState (default,never) : UnsignedShort;
+		public var preload : DOMString;
+		public var buffered (default,never) : TimeRanges;
+		public function load() : Void;
+		public function canPlayType(type:DOMString) : DOMString;
+	
 	// ready state
-	public static var HAVE_NOTHING : UnsignedShort = 0;
-	public static var HAVE_METADATA : UnsignedShort = 1;
-	public static var HAVE_CURRENT_DATA : UnsignedShort = 2;
-	public static var HAVE_FUTURE_DATA : UnsignedShort = 3;
-	public static var HAVE_ENOUGH_DATA : UnsignedShort = 4;
-	public var readyState (default,never) : UnsignedShort;
-	public var seeking (default,never) : Bool;
+		public static var HAVE_NOTHING : UnsignedShort = 0;
+		public static var HAVE_METADATA : UnsignedShort = 1;
+		public static var HAVE_CURRENT_DATA : UnsignedShort = 2;
+		public static var HAVE_FUTURE_DATA : UnsignedShort = 3;
+		public static var HAVE_ENOUGH_DATA : UnsignedShort = 4;
+		public var readyState (default,never) : UnsignedShort;
+		public var seeking (default,never) : Bool;
+	
 	// playback state
-	public var currentTime : Float;
-	public var startTime (default,never) : Float;
-	public var duration (default,never) : Float;
-	public var paused (default,never) : Bool;
-	public var defaultPlaybackRate : Float;
-	public var playbackRate : Float;
-	public var played (default,never) : TimeRanges;
-	public var seekable (default,never) : TimeRanges;
-	public var ended (default,never) : Bool;
-	public var autoplay : Bool;
-	public var loop : Bool;
-	public function play() : Void;
-	public function pause() : Void;
+		public var currentTime : Float;
+		public var startTime (default,never) : Float;
+		public var duration (default,never) : Float;
+		public var paused (default,never) : Bool;
+		public var defaultPlaybackRate : Float;
+		public var playbackRate : Float;
+		public var played (default,never) : TimeRanges;
+		public var seekable (default,never) : TimeRanges;
+		public var ended (default,never) : Bool;
+		public var autoplay : Bool;
+		public var loop : Bool;
+		public function play() : Void;
+		public function pause() : Void;
+	
 	// controls
-	public var controls : Bool;
-	public var volume : Float;
-	public var muted : Bool;
+		public var controls : Bool;
+		public var volume : Float;
+		public var muted : Bool;
 }
 
 
@@ -630,7 +635,6 @@ extern class HTMLAreaElement extends HTMLElement {
 	public var media : DOMString;
 	public var hreflang : DOMString;
 	public var type : DOMString;
-	
 	public var protocol : DOMString;
 	public var host : DOMString;
 	public var hostname : DOMString;
@@ -733,14 +737,11 @@ extern class HTMLFormElement extends HTMLElement {
 
 
 extern class HTMLFieldSetElement extends HTMLElement { 
-	// public var disabled : Bool; // this should be redefining HTMLElement to be writable but...
+	//public var disabled : Bool; /* this should be redefining HTMLElement to be writable but... */
 	public var form (default,never) : HTMLFormElement;
 	public var name : DOMString;
-
 	public var type (default,never) : DOMString;
-
 	public var elements (default,never) : HTMLFormControlsCollection;
-
 	public var willValidate (default,never) : Bool;
 	public var validity (default,never) : ValidityState;
 	public var validationMessage (default,never) : DOMString;
@@ -767,7 +768,7 @@ extern class HTMLInputElement extends HTMLElement {
 	public var autocomplete : DOMString;
 	public var autofocus : Bool;
 	public var defaultChecked : Bool;
-	// public var checked : Bool; // this should be redefining HTMLElement to be writable but...
+	//public var checked : Bool; // this should be redefining HTMLElement to be writable but...
 	// public var disabled : Bool; // this should be redefining HTMLElement to be writable but...
 	public var form (default,never) : HTMLFormElement;
 	public var files (default,never) : FileList;

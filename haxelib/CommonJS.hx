@@ -32,22 +32,27 @@ using StringTools;
 
 class CommonJS {
 	
-
-	//Gets an element from the HTML document
+	
+	//Gets the current Window
+		public static function getWindow() : Window{
+			var window : Window =  untyped __js__("window");
+			return window;
+		}
+		
+	//Gets the current HTML Document 
 		public static function getHtmlDocument() : HTMLDocument{
 			var htmlDocument : HTMLDocument =  untyped __js__("document");
 			return htmlDocument;
 		}		
 	
 	
-	//Stop's the event propergation and defualt action
-		public static function stopEventPropergation( event : Dynamic ){
-			if(event.stopPropagation != null) event.stopPropagation(); 
-			else if( event.cancelBubble != null) event.cancelBubble = true;
-	    		if (event.preventDefault != null) event.preventDefault();
-	    		else if( event.returnValue != null) event.returnValue = false;
+	//Creates a new element on a given element or if none provided on the document body
+		public static function newElement( elementType : String, ?htmlElement : Dynamic  ) : Dynamic{
+			var htmlDocument : HTMLDocument =  getHtmlDocument();
+			if(htmlElement == null) htmlElement = htmlDocument.body;
+			return htmlElement.createElement(elementType);
 		}
-		
+
 
 	//Gets an element from the HTML document body
 		public static function get( domSelection : String  ) : Dynamic{
@@ -63,15 +68,14 @@ class CommonJS {
 			return htmlDocument.body.querySelectorAll(domSelection);
 		}	
 		
-	
-	//Sets CSS styles for all matching elements 
-		public static function setStyle( domSelection : String, cssStyle :String, value:String){
-			var nodeList : NodeList =  getAll(domSelection);
-			for( i in 0...nodeList.length ){
-				var element : Element = nodeList[i];
-				untyped element.style[cssStyle] = value;
-			}
-		}
+
+	//Stop's the event propergation and defualt action
+		public static function stopEventPropergation( event : Dynamic ){
+			if(event.stopPropagation != null) event.stopPropagation(); 
+			else if( event.cancelBubble != null) event.cancelBubble = true;
+			if (event.preventDefault != null) event.preventDefault();
+			else if( event.returnValue != null) event.returnValue = false;
+		}	
 		
 		
 	//Add event listener to all matching elements
@@ -82,7 +86,7 @@ class CommonJS {
 				element.addEventListener(eventType, eventHandler, useCapture); 
 			}	 
 		}	
-		
+			
 	//Remove event listener from all matching elements
 		public static function removeEventListener( domSelection : String, eventType :String, eventHandler:Dynamic->Void, ?useCapture:Bool = true){
 			var nodeList : NodeList =  getAll(domSelection);
@@ -100,7 +104,21 @@ class CommonJS {
  		 	if (element.currentStyle != null){ computedStyle = element.currentStyle; }
   			else { computedStyle = htmlDocument.defaultView.getComputedStyle(element, null); }
   			return computedStyle.getPropertyValue(style);
-		}			
+		}
+		
+		
+	//Sets CSS styles for all matching elements 
+		public static function setStyle( domSelection : String, cssStyle :String, value:String){
+			var nodeList : NodeList =  getAll(domSelection);
+			for( i in 0...nodeList.length ){
+				var element : Element = nodeList[i];
+				untyped element.style[cssStyle] = value;
+			}
+		}	
+		
+	
+	
+					
 		
 	
 }
