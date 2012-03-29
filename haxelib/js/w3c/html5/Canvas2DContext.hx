@@ -51,10 +51,9 @@ extern interface ImageData {
 	public var data (default,never) : CanvasPixelArray; /* READ ONLY */
 }
 
-extern interface CanvasPixelArray{
+extern interface CanvasPixelArray implements ArrayAccess<Int> {
 	public var length (default,never) : UnsignedLong; /* READ ONLY */
 }
-
 
 
 extern interface CanvasRenderingContext2D {
@@ -79,10 +78,10 @@ extern interface CanvasRenderingContext2D {
 
 	//Colors and styles
 	    public var strokeStyle : Dynamic; // (default black)
-		public var fillStyle : Dynamic;  // (default black)    
+		public var fillStyle : Dynamic;  // (default black)  
+
 		public function createLinearGradient(x0:Double, y0:Double, x1:Double, y1:Double) : CanvasGradient;
 		public function createRadialGradient(x0:Double, y0:Double, r0:Double, x1:Double, y1:Double, r1:Double): CanvasGradient;
-		
 		@:overload( function(image:HTMLImageElement, repetition:DOMString ) : CanvasPattern {} )
 		@:overload( function(image:HTMLCanvasElement, repetition:DOMString ) : CanvasPattern {} )
 		public function createPattern(image:HTMLVideoElement, repetition:DOMString) : CanvasPattern;
