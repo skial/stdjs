@@ -26,28 +26,6 @@ THE SOFTWARE.
 
 extern class Object implements Dynamic<Dynamic>, implements ArrayAccess<Dynamic> {
   
-  public static function __init__() : Void {
-    untyped __js__('Object.prototype.iterator = function() {
-      var o = this.instanceKeys();
-      var y = this;
-      return {
-        cur : 0,
-        arr : o,
-        hasNext: function() { return this.cur < this.arr.length; },
-        next: function() { return y[this.arr[this.cur++]]; }
-      };
-    }');
-    untyped __js__('Object.prototype.instanceKeys = function(proto) {
-      var keys = [];
-      proto = !proto;
-      for(var i in this) {
-        if(proto && Object.prototype[i]) continue;
-        keys.push(i);
-      }
-      return keys;
-    }');
-  }
-
   public static var prototype : Object;
   public static var length : Int;
     
@@ -74,8 +52,4 @@ extern class Object implements Dynamic<Dynamic>, implements ArrayAccess<Dynamic>
   public function toLocaleString() : String;
   public function toString( ?opt:Dynamic ) : String;
   public function valueOf() : Dynamic;
-  public function iterator() : Iterator<Null<Dynamic>>; // haXe Compat
-  
-  // custom
-  public function instanceKeys(?proto:Bool) : Array<String>;
 }
