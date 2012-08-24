@@ -71,7 +71,7 @@ class UserAgent {
 
 	// Other Browsing Contexts
 		public static var frames : WindowProxy = untyped __js__('window.frames');
-		public static var length : UnsignedLong = untyped __js__('window.length');
+		//public static var length : UnsignedLong = untyped __js__('window.length');
 		public static var top : WindowProxy = untyped __js__('window.top');
 		public static var opener : WindowProxy = untyped __js__('window.opener');
 		public static var parent : WindowProxy = untyped __js__('window.parent');
