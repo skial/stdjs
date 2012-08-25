@@ -2,7 +2,7 @@ package js.w3c.touch;
 
 import js.w3c.level3.Events;
 import js.w3c.level2.Views;
-//import js.Dom;
+
 
 /** From http://www.w3.org/TR/touch-events/ */
 @:native("Touch") extern class Touch 
