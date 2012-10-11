@@ -46,10 +46,10 @@ extern class Object implements Dynamic<Dynamic>, implements ArrayAccess<Dynamic>
   public var constructor : Dynamic;
   
   public function new(?o:Dynamic) : Void;
-  public function hasOwnProperty(prop:String) : Bool;
-  public function isPrototypeOf(object:Object) : Bool;
-  public function propertyIsEnumerable(prop:String) : Bool;
-  public function toLocaleString() : String;
-  //public function toString( ?opt:Dynamic ) : String;
-  public function valueOf() : Dynamic;
+ // public function hasOwnProperty(prop:String) : Bool;
+ // public function isPrototypeOf(object:Object) : Bool;
+ // public function propertyIsEnumerable(prop:String) : Bool;
+ // public function toLocaleString() : String;
+ // //public function toString( ?opt:Dynamic ) : String;
+ // public function valueOf() : Dynamic;
 }
