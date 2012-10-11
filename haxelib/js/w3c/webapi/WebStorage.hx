@@ -30,7 +30,7 @@ package js.w3c.webapi;
 import js.w3c.DOMTypes;
 import js.w3c.level3.Events;
 
-
+@:native("Storage")
 extern class Storage extends Object {
 	static public var length (default,never):UnsignedLong;
 	static public function clear() : Void;
