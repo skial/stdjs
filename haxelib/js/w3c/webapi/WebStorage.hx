@@ -31,14 +31,15 @@ import js.w3c.DOMTypes;
 import js.w3c.level3.Events;
 
 @:native("Storage")
-extern class Storage extends Object {
-	static public var length (default,never):UnsignedLong;
-	static public function clear() : Void;
-	static public function key( index : Int ) : Null<String>;
-	static public function setItem( key : String, value : String ) : Void;
-	static public function removeItem( key : String ) : Void;
-	static public function getItem( key : String ) : String;
-}
+extern class Storage extends implements ArrayAccess<String> {
+	var length(default,null) : Int;
+	function key( index : Int ) : Null<String>;
+
+	function setItem( key : String, value : String ) : Void;
+	function getItem(key:String):String ;
+
+	function removeItem( key : String ) : Void;
+	function clear() : Void;
 
 
 extern interface WindowSessionStorage {
