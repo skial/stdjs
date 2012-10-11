@@ -37,7 +37,7 @@ extern class Storage extends Object {
 	static public function key( index : Int ) : Null<String>;
 	static public function setItem( key : String, value : String ) : Void;
 	static public function removeItem( key : String ) : Void;
-	
+	static public function getItem( key : String ) : String;
 }
 
 
