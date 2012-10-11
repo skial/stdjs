@@ -34,6 +34,13 @@ import js.w3c.level3.Events;
 extern class Storage extends Object {
 	public var length (default,never) : UnsignedLong;
 	public function clear() : Void;
+
+	function key( index : Int ) : Null<String>;
+
+	function setItem( key : String, value : String ) : Void;
+
+	function removeItem( key : String ) : Void;
+	
 }
 
 
