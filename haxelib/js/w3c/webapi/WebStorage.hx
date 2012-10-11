@@ -35,11 +35,11 @@ extern class Storage  implements ArrayAccess<String> {
 	var length(default,null) : Int;
 	function key( index : Int ) : Null<String>;
 
-	public function setItem( key : String, value : String ) : Void;
-	public function getItem(key:String):String ;
+	static public function setItem( key : String, value : String ) : Void;
+	static public function getItem(key:String):String ;
 
-	public function removeItem( key : String ) : Void;
-	public function clear() : Void;
+	static public function removeItem( key : String ) : Void;
+	static public function clear() : Void;
 }
 
 extern interface WindowSessionStorage {
