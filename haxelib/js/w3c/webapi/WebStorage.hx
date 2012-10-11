@@ -30,7 +30,7 @@ package js.w3c.webapi;
 import js.w3c.DOMTypes;
 import js.w3c.level3.Events;
 
-@:native("Storage")
+@:native("localStorage")
 extern class Storage  implements ArrayAccess<String> {
 	var length(default,null) : Int;
 	function key( index : Int ) : Null<String>;
