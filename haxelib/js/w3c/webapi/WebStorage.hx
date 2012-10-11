@@ -40,7 +40,7 @@ extern class Storage  implements ArrayAccess<String> {
 
 	function removeItem( key : String ) : Void;
 	function clear() : Void;
-
+}
 
 extern interface WindowSessionStorage {
 	public var sessionStorage (default,never) : Storage;
