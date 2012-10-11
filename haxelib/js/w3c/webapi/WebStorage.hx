@@ -31,7 +31,7 @@ import js.w3c.DOMTypes;
 import js.w3c.level3.Events;
 
 @:native("Storage")
-extern class Storage extends implements ArrayAccess<String> {
+extern class Storage  implements ArrayAccess<String> {
 	var length(default,null) : Int;
 	function key( index : Int ) : Null<String>;
 
