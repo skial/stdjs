@@ -30,12 +30,17 @@ package js.w3c.webapi;
 import js.w3c.DOMTypes;
 import js.w3c.level3.Events;
 
+@:native("localStorage")
+extern class Storage  implements ArrayAccess<String> {
+	var length(default,null) : Int;
+	function key( index : Int ) : Null<String>;
 
-extern class Storage extends Object {
-	public var length (default,never) : UnsignedLong;
-	public function clear() : Void;
+	static public function setItem( key : String, value : Dynamic ) : Void;
+	static public function getItem(key:String):String ;
+
+	static public function removeItem( key : String ) : Void;
+	static public function clear() : Void;
 }
-
 
 extern interface WindowSessionStorage {
 	public var sessionStorage (default,never) : Storage;
