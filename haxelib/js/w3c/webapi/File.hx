@@ -33,12 +33,12 @@ import js.webgl.TypedArray;
 
 typedef FileList = Array<File>;
 
-
+@:native('File')
 extern class File extends Blob {
 	public var name (default,never) : DOMString;
 }
 
-
+@:native('Blob')
 extern class Blob {
 	public var size (default,never) : UnsignedLong;
 	public var type (default,never) : DOMString;
@@ -47,7 +47,7 @@ extern class Blob {
 }
 
 
-
+@:native('BlobReader')
 extern class BlobReader extends EventTarget {
 	public function new() : Void;
 	
@@ -78,7 +78,7 @@ extern class BlobReader extends EventTarget {
 }
 
 
-
+@:native('BlobReaderSync')
 extern class BlobReaderSync extends EventTarget {
 	public function new() : Void;
 	public function readAsArrayBuffer(blob:Blob) : ArrayBuffer;
@@ -87,7 +87,7 @@ extern class BlobReaderSync extends EventTarget {
 	public function readAsDataURL(blob:Blob) : DOMString;
 }
 
-
+@:native('FileError')
 extern class FileError {
 	public static var NO_MODIFICATION_ALLOWED_ERR : UnsignedShort = 7; // from FileWriter
 	public static var NOT_FOUND_ERR : UnsignedShort = 8;
@@ -100,6 +100,7 @@ extern class FileError {
 	public var code (default,never) : UnsignedShort;
 }
 
+@:native('FileException')
 extern class FileException {
 	public static var NO_MODIFICATION_ALLOWED_ERR : UnsignedShort = 7; // from FileWriter
 	public static var NOT_FOUND_ERR : UnsignedShort = 8;

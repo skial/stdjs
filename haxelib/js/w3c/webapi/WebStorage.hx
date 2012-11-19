@@ -51,6 +51,7 @@ extern interface WindowLocalStorage {
 	public var localStorage (default,never) : Storage;
 }
 
+@:native('StorageEvent')
 extern class StorageEvent extends Event {
 	public var key (default,never) : DOMString;
 	public var oldValue (default,never) : Dynamic;

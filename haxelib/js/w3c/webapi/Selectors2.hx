@@ -29,7 +29,6 @@ package js.w3c.webapi;
 import js.w3c.DOMTypes;
 import js.w3c.level3.Core;
 
-
 extern interface NodeSelector {
 	public function querySelector(selectors:DOMString, ?refNodes:Dynamic) : Element;
 	public function querySelectorAll(selectors:DOMString, ?refNodes:Dynamic) : NodeList;

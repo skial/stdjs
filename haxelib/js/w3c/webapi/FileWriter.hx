@@ -31,14 +31,14 @@ import js.w3c.level3.Events;
 import js.w3c.webapi.File;
 import js.w3c.webapi.Progress;
 
-
+@:native('BlobBuilder')
 extern class BlobBuilder extends Object {
 	public function new() : Void;
 	public function getBlob(?contentType:DOMString) : Blob;
 	public function append(textOrData:Dynamic, ?endings:DOMString) : Void; // raises (FileException);
 }
 
-
+@:native('FileSaver')
 extern class FileSaver extends Object {
 	public static var INIT : UnsignedShort = 0;
 	public static var WRITING : UnsignedShort = 1;
@@ -58,12 +58,11 @@ extern class FileSaver extends Object {
 	public var onwriteend : EventListener<ProgressEvent>;
 }
 
-
 extern interface FileSaverSync {
 	// not defined yet
 } 
 
-
+@:native('FileWriter')
 extern class FileWriter extends FileSaver {
 	public var position (default,never) : Long;
 	public var length (default,never) : Long;
@@ -72,7 +71,7 @@ extern class FileWriter extends FileSaver {
 	public function truncate (size:Long) : Void; // raises (FileException);
 }
 
-
+@:native('FileWriterSync')
 extern class FileWriterSync extends FileSaver {
 	public var position (default,never) : Long;
 	public var length (default,never) : Long;

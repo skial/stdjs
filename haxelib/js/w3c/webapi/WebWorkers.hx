@@ -73,7 +73,7 @@ extern class AbstractWorker extends EventTarget {
 	public var onerror : EventListener<ErrorEvent>;
 }
 
-
+@:native('Worker')
 extern class Worker extends AbstractWorker {
 	public function new(scriptURL:DOMString) : Void;
 	public function terminate() : Void;

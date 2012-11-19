@@ -30,7 +30,7 @@ package js.w3c.webapi;
 import js.w3c.DOMTypes;
 import js.w3c.level3.Events;
 
-
+@:native('ProgressEvent')
 extern class ProgressEvent extends Event {
 	public var lengthComputable (default,never) : Bool;
 	public var loaded (default,never) : UnsignedLong;

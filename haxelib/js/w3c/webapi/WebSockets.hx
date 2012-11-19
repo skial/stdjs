@@ -31,7 +31,7 @@ import js.w3c.DOMTypes;
 import js.w3c.level3.Events;
 import js.w3c.html5.Messaging;
 
-
+@:native('WebSocket')
 extern class WebSocket extends EventTarget {
 	public var url (default,never) : DOMString;
 	public function new(url:DOMString, ?protocols:Dynamic ) : Void; // protocol is String or Array<String>
@@ -54,7 +54,7 @@ extern class WebSocket extends EventTarget {
 	public function close() : Void;
 }
 
-
+@:native('CloseEvent')
 extern class CloseEvent extends Event {
 	public var wasClean (default,never) : Bool;
 	public function initCloseEvent(typeArg:DOMString, canBubbleArg:Bool, cancelableArg:Bool, wasCleanArg:Bool) : Void;

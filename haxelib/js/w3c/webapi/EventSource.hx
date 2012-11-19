@@ -31,6 +31,7 @@ import js.w3c.DOMTypes;
 import js.w3c.level3.Events;
 import js.w3c.html5.Messaging;
 
+@:native('EventSource')
 extern class EventSource extends EventTarget {
 
   public var url (default,never) : DOMString;
